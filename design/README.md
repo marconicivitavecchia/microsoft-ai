@@ -15,7 +15,7 @@ We propose two shapes to target different audience. Both shapes of the device ha
 **IDK**: is aimed at the "elder" age range of the target audience, that the children aged between 8 to 11 years old. Its shape has been designed to be more anonymous in order to avoid embarrassment in the subject with communication difficulties despite having a playful apperance; besides the character’s “arms” act like a handle which allow a better portability even when the device is not in use. (this device will be prototyped in the future)
 
 <p align="center">
-<img title="IDK Design" alt="IDK Design" src='./idk-design.png' width='70%'>
+<img title="IDK Design" alt="IDK Design" src='./idk-design.jpg' width='70%'>
 </p>
 
 We choose to start prototyping the first device. The second device may be developed in the future.
