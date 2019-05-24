@@ -1,0 +1,107 @@
+[
+  {
+    "faceId": "388a3fe7-2f35-4bc7-b5e1-806b606a0714",
+    "faceRectangle": {
+      "top": 1407,
+      "left": 1239,
+      "width": 308,
+      "height": 308
+    },
+    "faceAttributes": {
+      "emotion": {
+        "anger": 0,
+        "contempt": 0.019,
+        "disgust": 0,
+        "fear": 0,
+        "happiness": 0.799,
+        "neutral": 0.182,
+        "sadness": 0,
+        "surprise": 0
+      }
+    }
+  },
+  {
+    "faceId": "b0a91896-f9aa-4ff0-a2cd-35d250f2d45c",
+    "faceRectangle": {
+      "top": 1433,
+      "left": 2295,
+      "width": 295,
+      "height": 295
+    },
+    "faceAttributes": {
+      "emotion": {
+        "anger": 0,
+        "contempt": 0.001,
+        "disgust": 0,
+        "fear": 0,
+        "happiness": 0.999,
+        "neutral": 0,
+        "sadness": 0,
+        "surprise": 0
+      }
+    }
+  },
+  {
+    "faceId": "67fd2e7c-c752-4e42-8877-4a3669bef7b3",
+    "faceRectangle": {
+      "top": 1090,
+      "left": 2021,
+      "width": 272,
+      "height": 272
+    },
+    "faceAttributes": {
+      "emotion": {
+        "anger": 0,
+        "contempt": 0.001,
+        "disgust": 0,
+        "fear": 0,
+        "happiness": 0.589,
+        "neutral": 0.41,
+        "sadness": 0.001,
+        "surprise": 0
+      }
+    }
+  },
+  {
+    "faceId": "c873aaf4-f252-442f-9dbb-0fb16b0ac4f2",
+    "faceRectangle": {
+      "top": 1008,
+      "left": 1562,
+      "width": 266,
+      "height": 266
+    },
+    "faceAttributes": {
+      "emotion": {
+        "anger": 0,
+        "contempt": 0.041,
+        "disgust": 0,
+        "fear": 0,
+        "happiness": 0.926,
+        "neutral": 0.033,
+        "sadness": 0,
+        "surprise": 0
+      }
+    }
+  },
+  {
+    "faceId": "9ff9117a-05ad-4315-98af-bb08952fa1f0",
+    "faceRectangle": {
+      "top": 1138,
+      "left": 878,
+      "width": 265,
+      "height": 265
+    },
+    "faceAttributes": {
+      "emotion": {
+        "anger": 0,
+        "contempt": 0.001,
+        "disgust": 0,
+        "fear": 0,
+        "happiness": 0.794,
+        "neutral": 0.2,
+        "sadness": 0.005,
+        "surprise": 0
+      }
+    }
+  }
+]
