@@ -1,9 +1,9 @@
 // This example uses https://github.com/sandeepmistry/node-raspberry-pi-camera-native
-// require module
 
 console.log("This example uses raspberry-pi-camera-native and it is not supported anymore");
-console.log("Please use pi-camera");
+console.log("Please see main.js");
 return;
+
 const raspberryPiCamera = require('raspberry-pi-camera-native');
 
 // add frame data event listener
