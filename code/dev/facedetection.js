@@ -10,7 +10,7 @@ const subscriptionKey = '8b22cb7e2112497c93cd5fec0567f1fb';
 // westus, replace "westcentralus" in the URL below with "westus".
 const uriBase = 'https://northeurope.api.cognitive.microsoft.com/face/v1.0/detect';
 
-const imageUrl = './face.jpg';
+const imageUrl = './test.jpg';
 
 // Request parameters.
 const params = {

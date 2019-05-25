@@ -1,0 +1,44 @@
+[
+  {
+    "faceId": "4c338984-5a4d-4794-818d-3f0dbe36859d",
+    "faceRectangle": {
+      "top": 621,
+      "left": 616,
+      "width": 195,
+      "height": 195
+    },
+    "faceAttributes": {
+      "emotion": {
+        "anger": 0,
+        "contempt": 0,
+        "disgust": 0,
+        "fear": 0,
+        "happiness": 0,
+        "neutral": 0.999,
+        "sadness": 0.001,
+        "surprise": 0
+      }
+    }
+  },
+  {
+    "faceId": "c93f7d6e-724a-46c2-9aa2-e402b762f7ee",
+    "faceRectangle": {
+      "top": 693,
+      "left": 1503,
+      "width": 180,
+      "height": 180
+    },
+    "faceAttributes": {
+      "emotion": {
+        "anger": 0,
+        "contempt": 0.001,
+        "disgust": 0,
+        "fear": 0,
+        "happiness": 0.003,
+        "neutral": 0.984,
+        "sadness": 0.011,
+        "surprise": 0
+      }
+    }
+  }
+]
