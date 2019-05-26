@@ -9,7 +9,7 @@ import { catchError, retry } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FrogFaceService {
-  frogFaceUrl = 'assets/frog.json'
+  frogFaceUrl = 'assets/detected-face.json'
   constructor(private http: HttpClient) { }
 
   getFrogFace(): Observable<DetectedFace> {
