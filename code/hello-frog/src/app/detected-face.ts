@@ -11,7 +11,7 @@ export interface Emotions {
 
 
 export interface DetectedFace {
-    img: object;
+    imgUrl: string;
     emotion: Emotions;
     status: string;
   }

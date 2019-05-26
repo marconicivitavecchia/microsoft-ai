@@ -1,4 +1,1 @@
-<div *ngIf="faceImg">
-  <img src='{{"data:image/jpeg;base64," + this.faceImg.data.toString("base64")}}' alt="preview">
-  <!-- <img src={{imgUrl}} alt="preview"> -->
-</div>
+  <img *ngIf="faceImgUrl" [src]='faceImgUrl' alt="preview">

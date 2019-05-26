@@ -1,4 +1,4 @@
-<p *ngIf="face">
-  frog-face is {{face.name}}
-  <app-emotion-strength [value]="primaryFaceValue"></app-emotion-strength>
-</p>
+<div *ngIf="face">
+  <img [src]='frogFaceUrl' alt="emotion frog">
+  <app-emotion-strength [value]="face.value"></app-emotion-strength>
+</div>

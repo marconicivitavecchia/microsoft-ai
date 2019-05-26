@@ -1,12 +1,6 @@
-<div id="screen">
-<section id="primary">
-  <!-- <app-preview [faceImg]="primaryFace"id="face-img"></app-preview> -->
-  <app-preview id="face-img"></app-preview>
-  <div id="primary-emotion">
-    <app-frog-face [face]="primaryFace"></app-frog-face>
-  </div>
-</section>
-<section id="auxiliary"></section>
-<!-- <app-frog-face></app-frog-face>
-<app-frog-face></app-frog-face> -->
+<div id="screen" class="grid-container">
+  <app-preview class="preview" [faceImgUrl]="previewImgUrl" id="face-img"></app-preview>
+  <app-frog-face class="primaryFace" [face]="primaryFace"></app-frog-face>
+  <app-frog-face class="secondFace" [face]="secondFace"></app-frog-face>
+  <app-frog-face class="thirdFace" [face]="thirdFace"></app-frog-face>
 </div>

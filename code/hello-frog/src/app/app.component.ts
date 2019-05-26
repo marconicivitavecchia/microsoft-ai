@@ -10,28 +10,32 @@ import { DetectedFace } from './detected-face';
 })
 export class AppComponent {
   title = 'hello-frog';
-  previewImg;
+  previewImgUrl: string;
   primaryFace: FrogFace;
-  primaryFaceValue = 80;
+  secondFace: FrogFace;
+  thirdFace: FrogFace;
 
   constructor(private frogFaceService: FrogFaceService) { }
 
   getFrogFace(): void {
     this.frogFaceService.getFrogFace()
       .subscribe((data: DetectedFace) => {
-        console.log(data);
         let detectedFace = { ...data };
-        console.log(detectedFace);
+        this.previewImgUrl = 'assets/cropped-face.jpg'; //data.imgUrl;
         this.primaryFace = {
           emotion: "neutral",
           value: detectedFace.emotion["neutral"]
         }
+        this.secondFace = {
+          emotion: "sadness",
+          value: detectedFace.emotion["sadness"]
+        }
+        this.thirdFace = null;
       });
   }
 
   ngOnInit() {
     this.getFrogFace();
-    this.primaryFaceValue = 90;
   }
 
 }

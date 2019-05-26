@@ -7,7 +7,19 @@ import { FrogFace } from '../frog-face';
   styleUrls: ['./frog-face.component.css']
 })
 export class FrogFaceComponent implements OnInit {
-  @Input() face: FrogFace;
+  private _face: FrogFace;
+  frogFaceUrl: string;
+  @Input()
+  set face(face: FrogFace) {
+    if (face) {
+      this.frogFaceUrl = `assets/faces/${face.emotion}.png`;
+      console.log(this.frogFaceUrl);
+    }
+    this._face = face;
+  };
+  get face(): FrogFace {
+    return this._face;
+  }
 
   constructor() { }
 

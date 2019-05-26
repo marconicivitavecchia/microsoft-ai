@@ -1,0 +1,24 @@
+.preview {
+    grid-area: preview;
+}
+.primaryFace {
+    grid-area: primary;
+    height: 160px
+}
+.secondFace {
+    grid-area: second; 
+    height: 120px
+}
+.thirdFace {
+    grid-area: third;
+}
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'preview primary primary'
+      'second third third';
+    grid-gap: 0px;
+    padding: 0px;
+}
+
+  
