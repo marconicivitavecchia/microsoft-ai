@@ -1,14 +1,12 @@
 'use strict';
 
 const request = require('request');
-const fs = require('fs');
+//const fs = require('fs');
+const sharp = require('sharp');
 const { StillCamera } = require("pi-camera-connect");
 
 const express = require('express');
 const app = express();
-
-
-
 
 const stillCamera = new StillCamera();
 
@@ -29,9 +27,11 @@ const faceRequestParams = {
 };
 
 
-app.get('/camera', function(req, res) {
+app.get('/camera', function (req, res) {
+	// Take a still picture
 	stillCamera.takeImage().then(image => {
-		console.log("image captured");	
+		console.log("image captured");
+		// Create POST options
 		const postOptions = {
 			uri: uriBase,
 			qs: faceRequestParams,
@@ -41,14 +41,34 @@ app.get('/camera', function(req, res) {
 				'Ocp-Apim-Subscription-Key': subscriptionKey
 			}
 		};
-
-		console.log("making a POST request to Azure Face API...");	
+		// Making POST request
+		console.log("making a POST request to Azure Face API...");
 		request.post(postOptions, (error, response, body) => {
 			if (error) {
 				console.log('Error: ', error);
 				return;
 			}
-			let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
+
+			let jsonData = {};
+			let azureData = JSON.parse(body);
+			if (azureData.length > 0) {
+				// take only the first face
+				let faceData = azureData[0];
+				let faceDataRect = faceData.faceRectangle;
+				console.log(faceDataRect);
+				// Crop the image
+				sharp(originalImage).extract({ width: faceDataRect.width, height: faceDataRect.height, left: faceDataRect.left, top: faceDataRect.top }).toBuffer()
+					.then(function (image) {
+						jsonData.faceImg = image;
+						console.log("Image cropped and saved");
+					})
+					.catch(function (err) {
+						console.log("An error occured cropping the face");
+						console
+					});
+					jsonData.emotion = faceData.faceAttributes.emotion;
+			}
+			let jsonResponse = JSON.stringify(jsonData, null, '  ');
 			console.log('JSON Response\n');
 			console.log(jsonResponse);
 			res.status(200).send(jsonResponse);
@@ -57,12 +77,12 @@ app.get('/camera', function(req, res) {
 });
 
 // Express route for any other unrecognised incoming requests
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
 	res.status(404).send('Unrecognised API call');
 });
 
 // Express route to handle errors
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
 	if (req.xhr) {
 		res.status(500).send('Oops, Something went wrong!');
 	} else {
