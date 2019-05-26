@@ -1,14 +1,13 @@
 'use strict';
 
 const request = require('request');
-//const fs = require('fs');
+const fs = require('fs');
 const sharp = require('sharp');
-const { StillCamera } = require("pi-camera-connect");
+const { StillCamera, Rotation } = require("pi-camera-connect");
 
 const express = require('express');
 const app = express();
 
-const stillCamera = new StillCamera();
 
 const subscriptionKey = '8b22cb7e2112497c93cd5fec0567f1fb';
 
@@ -26,11 +25,21 @@ const faceRequestParams = {
 	'returnFaceAttributes': 'emotion'
 };
 
+const cameraOptions = {
+	//1920x1080
+	width:1920,
+	height:1080,
+	rotation: Rotation.Rotate180
+};
+
+const stillCamera = new StillCamera(cameraOptions);
 
 app.get('/camera', function (req, res) {
 	// Take a still picture
-	stillCamera.takeImage().then(image => {
-		console.log("image captured");
+	stillCamera.takeImage(cameraOptions).then(image => {
+		console.log(`image captured, size ${image.length}`);
+		// DEBUG: save image
+		fs.writeFileSync("/home/pi/Desktop/out.jpg", image);
 		// Create POST options
 		const postOptions = {
 			uri: uriBase,
@@ -51,20 +60,23 @@ app.get('/camera', function (req, res) {
 
 			let jsonData = {};
 			let azureData = JSON.parse(body);
+			console.log('AzureData\n');
+			console.log(azureData);
+			console.log(`Found ${azureData.length} faces`);
 			if (azureData.length > 0) {
 				// take only the first face
 				let faceData = azureData[0];
 				let faceDataRect = faceData.faceRectangle;
 				console.log(faceDataRect);
 				// Crop the image
-				sharp(originalImage).extract({ width: faceDataRect.width, height: faceDataRect.height, left: faceDataRect.left, top: faceDataRect.top }).toBuffer()
-					.then(function (image) {
-						jsonData.faceImg = image;
-						console.log("Image cropped and saved");
+				console.log("Cropping image...");
+				sharp(image).extract({ width: faceDataRect.width, height: faceDataRect.height, left: faceDataRect.left, top: faceDataRect.top }).toBuffer()
+					.then(function (croppedImage) {
+						jsonData.faceImg = croppedImage;
+						console.log(`Image cropped, size ${croppedImage.length}`);
 					})
 					.catch(function (err) {
 						console.log("An error occured cropping the face");
-						console
 					});
 					jsonData.emotion = faceData.faceAttributes.emotion;
 			}
