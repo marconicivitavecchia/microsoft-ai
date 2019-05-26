@@ -27,8 +27,8 @@ const faceRequestParams = {
 
 const cameraOptions = {
 	//1920x1080
-	width:1920,
-	height:1080,
+	width: 1920,
+	height: 1080,
 	rotation: Rotation.Rotate180
 };
 
@@ -54,11 +54,15 @@ app.get('/camera', function (req, res) {
 		console.log("making a POST request to Azure Face API...");
 		request.post(postOptions, (error, response, body) => {
 			if (error) {
-				console.log('Error: ', error);
+				console.log('Error posting image: ', error);
+				let jsonData = {status: "POST error"};
+				let jsonResponse = JSON.stringify(jsonData, null, '  ');
+				console.log('JSON Response\n');
+				console.log(jsonResponse);
+				res.status(501).send(jsonResponse);
 				return;
 			}
 
-			let jsonData = {};
 			let azureData = JSON.parse(body);
 			console.log('AzureData\n');
 			console.log(azureData);
@@ -72,20 +76,36 @@ app.get('/camera', function (req, res) {
 				console.log("Cropping image...");
 				sharp(image).extract({ width: faceDataRect.width, height: faceDataRect.height, left: faceDataRect.left, top: faceDataRect.top }).toBuffer()
 					.then(function (croppedImage) {
-						jsonData.faceImg = croppedImage;
 						console.log(`Image cropped, size ${croppedImage.length}`);
+						let jsonData = {};
+						jsonData.faceImg = croppedImage;
+						jsonData.emotion = faceData.faceAttributes.emotion;
+						jsonData.status = "OK";
+						let jsonResponse = JSON.stringify(jsonData, null, '  ');
+						console.log('JSON Response\n');
+						console.log(jsonResponse);
+						res.status(200).send(jsonResponse);
 					})
 					.catch(function (err) {
 						console.log("An error occured cropping the face");
 					});
-					jsonData.emotion = faceData.faceAttributes.emotion;
+			} else {
+				let jsonData = {status: "no face found"};
+				let jsonResponse = JSON.stringify(jsonData, null, '  ');
+				console.log('JSON Response\n');
+				console.log(jsonResponse);
+				res.status(200).send(jsonResponse);
 			}
-			let jsonResponse = JSON.stringify(jsonData, null, '  ');
-			console.log('JSON Response\n');
-			console.log(jsonResponse);
-			res.status(200).send(jsonResponse);
 		});
-	});
+	})
+	.catch(function (err) {
+		console.log("An error occured with raspberry camera");
+		let jsonData = {status: "error capturing image"};
+		let jsonResponse = JSON.stringify(jsonData, null, '  ');
+		console.log('JSON Response\n');
+		console.log(jsonResponse);
+		res.status(501).send(jsonResponse);
+	});;
 });
 
 // Express route for any other unrecognised incoming requests
