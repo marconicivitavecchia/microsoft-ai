@@ -40,7 +40,7 @@ app.get('/camera', function (req, res) {
 	stillCamera.takeImage(cameraOptions).then(image => {
 		console.log(`image captured, size ${image.length}`);
 		// DEBUG: save image
-		fs.writeFileSync("/home/pi/Desktop/out.jpg", image);
+		//fs.writeFileSync("/home/pi/Desktop/out.jpg", image);
 		// Create POST options
 		const postOptions = {
 			uri: uriBase,
@@ -78,6 +78,7 @@ app.get('/camera', function (req, res) {
 				sharp(image).extract({ width: faceDataRect.width, height: faceDataRect.height, left: faceDataRect.left, top: faceDataRect.top }).toBuffer()
 					.then(function (croppedImage) {
 						console.log(`Image cropped, size ${croppedImage.length}`);
+						fs.writeFileSync(`${faceData.faceId}.jpg`, image);
 						let jsonData = {};
 						jsonData.faceImg = croppedImage;
 						jsonData.emotion = faceData.faceAttributes.emotion;
