@@ -25,6 +25,7 @@ const faceRequestParams = {
 	'returnFaceAttributes': 'emotion'
 };
 
+// Note: remove width and height to full resolution
 const cameraOptions = {
 	//1920x1080
 	width: 1920,
