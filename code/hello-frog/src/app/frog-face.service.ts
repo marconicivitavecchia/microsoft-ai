@@ -3,13 +3,14 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { DetectedFace } from './detected-face';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FrogFaceService {
-  frogFaceUrl = 'assets/detected-face.json'
+  frogFaceUrl = environment.serverUrl
+
   constructor(private http: HttpClient) { }
 
   getFrogFace(): Observable<DetectedFace> {
