@@ -38,12 +38,12 @@ We moved to OnShape with [this document](https://cad.onshape.com/documents/ded5c
 
 <p align="center">
 <img title="OnShape Frog" alt="OnShape Frog" src='./onshape/onshape.png' width='45%'>
-<img title="OnShape Frog exploded" alt="OnShape Frog exploded" src='./onshape/onshape-exploded.jpg' width='45%'>
+<img title="OnShape Frog exploded" alt="OnShape Frog exploded" src='./onshape/onshape-exploded.png' width='45%'>
 </p>
 
 ## User Interface
 Here a proposal for the user interface.
-<p align="center">
+<p align="center" style="border:solid">
 <img title="User Interface" alt="user interface" src='./wireframe.png' width='70%'>
 </p>
 
