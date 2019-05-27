@@ -5,11 +5,17 @@ const fs = require('fs');
 const sharp = require('sharp');
 const { StillCamera, Rotation } = require("pi-camera-connect");
 
+// Web Server
 const express = require('express');
 const app = express();
 
+// Environmental variables
+const dotenv = require('dotenv');
+dotenv.config();
 
-const subscriptionKey = '8b22cb7e2112497c93cd5fec0567f1fb';
+
+const subscriptionKey = process.env.API_KEY;
+console.log(subscriptionKey);
 
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
