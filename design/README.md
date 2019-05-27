@@ -21,9 +21,30 @@ We propose two shapes to target different audience. Both shapes of the device ha
 We choose to start prototyping the first device. The second device may be developed in the future.
 
 ## 3D model
-Here there are the 3D models of the frog device.
+
+### Preliminary design in Blender
+We started with a rapid prototyping in Blender.
+
 <p align="center">
-<img title="Frog front" alt="Frog front" src='./frog-3D-front.jpg' width='30%'>
-<img title="Frog side" alt="Frog side" src='./frog-3D-side.jpg' width='30%'>
-<img title="Frog top" alt="Frog top" src='./frog-3D-top.jpg' width='30%'>
+<img title="Frog front" alt="Frog front" src='./blender/frog-3D-front.jpg' width='30%'>
+<img title="Frog side" alt="Frog side" src='./blender/frog-3D-side.jpg' width='30%'>
+<img title="Frog top" alt="Frog top" src='./blender/frog-3D-top.jpg' width='30%'>
 </p>
+
+Then we add a bit of fancy rendering to give a better idea.
+
+### 3D printing with OnShape
+We moved to OnShape with [this document](https://cad.onshape.com/documents/ded5cd1085c5bb8ff9e7e6cc/w/644fef826693f4685b90f142/e/fb1e60ce61066c179cc7cb91) to prepare the file for 3D printing.
+
+<p align="center">
+<img title="OnShape Frog" alt="OnShape Frog" src='./onshape/onshape.png' width='45%'>
+<img title="OnShape Frog exploded" alt="OnShape Frog exploded" src='./onshape/onshape-exploded.jpg' width='45%'>
+</p>
+
+## User Interface
+Here a proposal for the user interface.
+<p align="center">
+<img title="User Interface" alt="user interface" src='./wireframe.png' width='70%'>
+</p>
+
+The idea is to show the most likely expression on the top, close to the crop of the snapshot from the camera. In the lower part, there are other faces in order of emotion probability, as received from Azure Cognitive Services.
