@@ -88,7 +88,7 @@ npm install -g @angular/cli
 ```
 
 ### Download this repository
-Again, if you are using the same Raspberry, you don't have to download the repository again. Otherwise, in the development machine, use the same command as above:
+Again, if you are using the same Raspberry, you don't have to download the repository twice. Otherwise, in the development machine, use the same command as above:
 
 ```sh
 git clone http://github.com/marconicivitavecchia/microsoft-ai.git
