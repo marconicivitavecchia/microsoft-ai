@@ -21,3 +21,85 @@ We used the [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-
 
 We didn't make a comparative benchmark with other similiar services, but we found the service well documented and with a good accuracy. Overall we are very satisfied with it.
 
+# Getting Started
+
+## Back-end
+What you need:
+- Rasberry PI, tested on 3 and 3+
+- Camera, tested with original camera v2.1
+
+First of all, connect to the Raspberry via SSH or keyboard and mouse and open a Terminal.
+
+### Install Node.js
+To install node.js, go to the [download page](https://nodejs.org/it/download/) and select ARMv7:
+
+```sh
+# Last stable version at 2019-05-27
+https://nodejs.org/dist/v10.15.3/node-v10.15.3-linux-armv7l.tar.xz
+tar -xzf node-v10.15.3-linux-armv7l.tar.xz
+cd node-v10.15.3-linux-armv7l
+sudo cp -R * /usr/local/
+```
+
+Then test that everything is OK:
+
+```sh
+node -v
+npm -v
+```
+
+If this doesn't work... please submit an issue!
+
+### Download this repository
+Just download this repo:
+
+```sh
+git clone http://github.com/marconicivitavecchia/microsoft-ai.git
+```
+
+### Run the server
+Navigate into the server folder and run the server:
+
+```sh
+cd microsoft-ai/code/server
+# Install dependencies
+npm install
+# Run the server
+node main.js
+```
+
+Now with any browser, open a new tab and go to the url `/camera`:
+<p align="center">
+<img title="Web Server" alt="Web Server" src='./webserver.png' width='70%'>
+</p>
+
+
+## Front-end
+### Install Node.js 
+Also in the front-end, we need to install node and npm. If you are using the same Raspberry also for the front-end, we don't have to do anything now.
+
+If you are using another machine for development, we have to install `node` also in this machine. For mac, we suggest to install node via `brew install node`. On other systems, please go to the official [download page](https://nodejs.org/it/download/).
+
+### Install Angular
+Install the Angular framework:
+
+```sh
+npm install -g @angular/cli
+```
+
+### Download this repository
+Again, if you are using the same Raspberry, you don't have to download the repository again. Otherwise, in the development machine, use the same command as above:
+
+```sh
+git clone http://github.com/marconicivitavecchia/microsoft-ai.git
+```
+### Run the front-end
+Go to the front-end folder and run it:
+
+```sh
+cd microsoft-ai/code/hello-frog
+ng serve --open
+```
+
+
+
