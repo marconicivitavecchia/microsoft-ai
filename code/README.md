@@ -76,9 +76,9 @@ Now with any browser, open a new tab and go to the url `/camera`:
 
 ## Front-end
 ### Install Node.js 
-Also in the front-end, we need to install node and npm. If you are using the same Raspberry also for the front-end, we don't have to do anything now.
+We need to install node and npm also in the front-end. If you are using the same Raspberry also for the front-end, we don't have to do anything now.
 
-If you are using another machine for development, we have to install `node` also in this machine. For mac, we suggest to install node via `brew install node`. On other systems, please go to the official [download page](https://nodejs.org/it/download/).
+If you are using another machine for development, you have to install `node` also in this machine. On mac, we suggest to install node via `brew install node`. On other systems, please go to the official [download page](https://nodejs.org/it/download/).
 
 ### Install Angular
 Install the Angular framework:
