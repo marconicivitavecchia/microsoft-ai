@@ -23,12 +23,7 @@ We choose to start prototyping the first device. The second device may be develo
 ## 3D model
 Here there are the 3D models of the frog device.
 <p align="center">
-<img title="Frog front" alt="Frog front" src='./frog-3D-front.jpg' width='70%'>
-</p>
-<p align="center">
-<img title="Frog side" alt="Frog side" src='./frog-3D-side.jpg' width='70%'>
-</p>
-
-<p align="center">
-<img title="Frog top" alt="Frog top" src='./frog-3D-top.jpg' width='70%'>
+<img title="Frog front" alt="Frog front" src='./frog-3D-front.jpg' width='30%'>
+<img title="Frog side" alt="Frog side" src='./frog-3D-side.jpg' width='30%'>
+<img title="Frog top" alt="Frog top" src='./frog-3D-top.jpg' width='30%'>
 </p>
