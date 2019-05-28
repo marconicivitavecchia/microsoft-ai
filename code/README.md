@@ -13,7 +13,7 @@ We used:
 - [pi-camera-connect](https://github.com/servall/pi-camera-connect) to read pictures from the Raspberry camera
 
 ## Front-end
-We used Angular to develop the front-end. This is beyond the common knowledge of students of the forth year, but since there are several parts of the UI that are repeated, we thought that the effort of studying and using a new tool based on the concept of "components" has paid off.
+We used Angular to develop the front-end. This is beyond the common knowledge of students of the forth year, but since there are several parts of the UI that are repeated, we thought that the effort of studying and using a new tool based on the concept of "components" paid off.
 
 ## Microsoft Azure Cloud Services
 
@@ -57,6 +57,21 @@ Just download this repo:
 git clone http://github.com/marconicivitavecchia/microsoft-ai.git
 ```
 
+### Configure environment
+Before running the server, we need to add Azure key that cannot be shared in GitHub.
+
+Navigate to the server folder and create the .env file:
+```sh
+cd microsoft-ai/code/server
+touch .env
+```
+
+Edit the file with `nano`, `vim` or whatever and add the following line, with an API Key:
+```
+API_KEY='your-azure-api-key'
+```
+
+
 ### Run the server
 Navigate into the server folder and run the server:
 
@@ -76,9 +91,9 @@ Now with any browser, open a new tab and go to the url `/camera`:
 
 ## Front-end
 ### Install Node.js 
-Also in the front-end, we need to install node and npm. If you are using the same Raspberry also for the front-end, we don't have to do anything now.
+We need to install node and npm also in the front-end. If you are using the same Raspberry also for the front-end, we don't have to do anything now.
 
-If you are using another machine for development, we have to install `node` also in this machine. For mac, we suggest to install node via `brew install node`. On other systems, please go to the official [download page](https://nodejs.org/it/download/).
+If you are using another machine for development, you have to install `node` also in this machine. On mac, we suggest to install node via `brew install node`. On other systems, please go to the official [download page](https://nodejs.org/it/download/).
 
 ### Install Angular
 Install the Angular framework:
@@ -88,7 +103,7 @@ npm install -g @angular/cli
 ```
 
 ### Download this repository
-Again, if you are using the same Raspberry, you don't have to download the repository again. Otherwise, in the development machine, use the same command as above:
+Again, if you are using the same Raspberry, you don't have to download the repository twice. Otherwise, in the development machine, use the same command as above:
 
 ```sh
 git clone http://github.com/marconicivitavecchia/microsoft-ai.git
