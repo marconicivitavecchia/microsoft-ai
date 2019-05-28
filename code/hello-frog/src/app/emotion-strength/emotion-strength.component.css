@@ -1,0 +1,8 @@
+.crop {
+    overflow: hidden;
+    margin-left: -20%;
+}
+
+div {
+    display: inline-block;
+}
