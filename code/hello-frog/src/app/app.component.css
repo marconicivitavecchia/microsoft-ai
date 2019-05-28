@@ -1,24 +1,24 @@
 .preview {
-    grid-area: preview;
+    width:160px;
+    height:160px;
+    float:left
 }
 .primaryFace {
-    grid-area: primary;
-    height: 160px
-}
-.secondFace {
-    grid-area: second; 
-    height: 120px
-}
-.thirdFace {
-    grid-area: third;
-}
-.grid-container {
-    display: grid;
-    grid-template-areas:
-      'preview primary primary'
-      'second third third';
-    grid-gap: 0px;
-    padding: 0px;
+    margin-left: 50px;
+    float:left;
 }
 
-  
+.primaryFaceContainer {
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.secondFace, .thirdFace, .forthFace {
+    float:left;
+    margin: 20px 10px;
+}
+
+.primary, .secondary {
+    overflow: hidden;
+    clear:both;
+}

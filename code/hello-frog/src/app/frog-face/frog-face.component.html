@@ -1,4 +1,4 @@
 <div *ngIf="face">
-  <img [src]='frogFaceUrl' alt="emotion frog">
+  <img [src]='frogFaceUrl' [style.height.px]='frogHeight' alt="emotion frog">
   <app-emotion-strength [value]="face.value"></app-emotion-strength>
 </div>

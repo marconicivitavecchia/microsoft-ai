@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'assets/detected-face.json'
+  serverUrl: 'assets/detected-face.v0.2.json'
 };
 
 /*

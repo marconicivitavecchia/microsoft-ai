@@ -10,10 +10,14 @@ import { DetectedFace } from './detected-face';
 })
 export class AppComponent {
   title = 'hello-frog';
-  previewImgUrl: string;
+  previewImg: string;
   primaryFace: FrogFace;
   secondFace: FrogFace;
   thirdFace: FrogFace;
+  forthFace: FrogFace;
+
+  primaryHeight = 160;
+  secondaryHeight = 100;
 
   constructor(private frogFaceService: FrogFaceService) { }
 
@@ -21,7 +25,7 @@ export class AppComponent {
     this.frogFaceService.getFrogFace()
       .subscribe((data: DetectedFace) => {
         let detectedFace = { ...data };
-        this.previewImgUrl = 'assets/cropped-face.jpg'; //data.imgUrl;
+        this.previewImg = data.img; //'assets/cropped-face.jpg';
         this.primaryFace = {
           emotion: "neutral",
           value: detectedFace.emotion["neutral"]
@@ -30,7 +34,14 @@ export class AppComponent {
           emotion: "sadness",
           value: detectedFace.emotion["sadness"]
         }
-        this.thirdFace = null;
+        this.thirdFace = {
+          emotion: "happiness",
+          value: detectedFace.emotion["happiness"]
+        }
+        this.forthFace = {
+          emotion: "fear",
+          value: detectedFace.emotion["fear"]
+        }
       });
   }
 

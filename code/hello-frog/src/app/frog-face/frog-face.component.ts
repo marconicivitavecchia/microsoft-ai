@@ -9,6 +9,9 @@ import { FrogFace } from '../frog-face';
 export class FrogFaceComponent implements OnInit {
   private _face: FrogFace;
   frogFaceUrl: string;
+  
+  @Input() frogHeight = 100;
+
   @Input()
   set face(face: FrogFace) {
     if (face) {
