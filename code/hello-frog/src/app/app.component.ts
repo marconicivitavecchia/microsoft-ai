@@ -25,23 +25,16 @@ export class AppComponent {
     this.frogFaceService.getFrogFace()
       .subscribe((data: DetectedFace) => {
         let detectedFace = { ...data };
-        this.previewImg = data.img; //'assets/cropped-face.jpg';
-        this.primaryFace = {
-          emotion: "neutral",
-          value: detectedFace.emotion["neutral"]
-        }
-        this.secondFace = {
-          emotion: "sadness",
-          value: detectedFace.emotion["sadness"]
-        }
-        this.thirdFace = {
-          emotion: "happiness",
-          value: detectedFace.emotion["happiness"]
-        }
-        this.forthFace = {
-          emotion: "fear",
-          value: detectedFace.emotion["fear"]
-        }
+        this.previewImg = data.img;
+        
+        const emotionArr = Object.keys(detectedFace.emotion).map(k => { return { "emotion": k, "value": detectedFace.emotion[k] }; });
+        emotionArr.sort(function (a, b) {
+          return b.value - a.value;
+        });
+        this.primaryFace = emotionArr[0];
+        this.secondFace =  emotionArr[1];
+        this.thirdFace =  emotionArr[2];
+        this.forthFace =  emotionArr[3];
       });
   }
 
