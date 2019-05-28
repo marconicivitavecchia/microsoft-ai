@@ -57,6 +57,21 @@ Just download this repo:
 git clone http://github.com/marconicivitavecchia/microsoft-ai.git
 ```
 
+### Configure environment
+Before running the server, we need to add Azure key that cannot be shared in GitHub.
+
+Navigate to the server folder and create the .env file:
+```sh
+cd microsoft-ai/code/server
+touch .env
+```
+
+Edit the file with `nano`, `vim` or whatever and add the following line, with an API Key:
+```
+API_KEY='your-azure-api-key'
+```
+
+
 ### Run the server
 Navigate into the server folder and run the server:
 
