@@ -116,5 +116,12 @@ cd microsoft-ai/code/hello-frog
 ng serve --open
 ```
 
+Enjoy!
+
+## Screenshots
+<p align="center">
+<img title="screenshot" alt="screenshot" src='./screenshot.png' width='70%'>
+</p>
+
 
 
