@@ -16,7 +16,6 @@ export class FrogFaceComponent implements OnInit {
   set face(face: FrogFace) {
     if (face) {
       this.frogFaceUrl = `assets/faces/${face.emotion}.png`;
-      console.log(this.frogFaceUrl);
     }
     this._face = face;
   };
