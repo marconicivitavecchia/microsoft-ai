@@ -53,7 +53,7 @@ The idea is to show the most likely expression on the top, close to the crop of 
 Almost there!
 
 <p align="center" >
-<img title="Printed model disassembled" alt="Printed model disassembled" src='./printed/printed-disassembled.png' width='45%'>
-<img title="Printed model assembled" alt="Printed model assembled" src='./printed/printed-assembled.png' width='45%'>
+<img title="Printed model disassembled" alt="Printed model disassembled" src='./printed/printed-disassembled.jpg' width='45%'>
+<img title="Printed model assembled" alt="Printed model assembled" src='./printed/printed-assembled.jpg' width='45%'>
 
 </p>
