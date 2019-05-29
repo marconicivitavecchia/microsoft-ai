@@ -1,13 +1,22 @@
-<div id="screen" class="grid-container">
-  <div class='primary'>
-    <app-preview class="preview" [img]="previewImg" id="face-img"></app-preview>
-    <div class="primaryFaceContainer">
-      <app-frog-face [frogHeight]="primaryHeight" class="primaryFace" [face]="primaryFace"></app-frog-face>
+<div id="screen"  (click)="onClick()">
+  <div *ngIf="showSplash" id="splash">
+    Click on the screen to take a new picture!
+  </div>
+
+  <div *ngIf="primaryFace" id="face-data">
+    <div class='primary'>
+      <app-preview class="preview" [img]="previewImg" id="face-img"></app-preview>
+      <div class="primaryFaceContainer">
+        <app-frog-face [frogHeight]="primaryHeight" class="primaryFace" [face]="primaryFace"></app-frog-face>
+      </div>
+    </div>
+    <div class='secondary'>
+      <app-frog-face [frogHeight]="secondaryHeight" class="secondFace" [face]="secondFace"></app-frog-face>
+      <app-frog-face [frogHeight]="secondaryHeight" class="thirdFace" [face]="thirdFace"></app-frog-face>
+      <app-frog-face [frogHeight]="secondaryHeight" class="forthFace" [face]="forthFace"></app-frog-face>
     </div>
   </div>
-  <div class='secondary'>
-    <app-frog-face [frogHeight]="secondaryHeight" class="secondFace" [face]="secondFace"></app-frog-face>
-    <app-frog-face [frogHeight]="secondaryHeight" class="thirdFace" [face]="thirdFace"></app-frog-face>
-    <app-frog-face [frogHeight]="secondaryHeight" class="forthFace" [face]="forthFace"></app-frog-face>
-  </div>
+  <footer>
+    Fork me at <a href="https://github.com/marconicivitavecchia/microsoft-ai/">github.com/marconicivitavecchia/microsoft-ai</a>!
+  </footer>
 </div>

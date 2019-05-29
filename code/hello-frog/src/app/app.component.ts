@@ -10,6 +10,7 @@ import { DetectedFace } from './detected-face';
 })
 export class AppComponent {
   title = 'hello-frog';
+  showSplash: boolean = true;
   previewImg: string;
   primaryFace: FrogFace;
   secondFace: FrogFace;
@@ -35,10 +36,17 @@ export class AppComponent {
         this.secondFace =  emotionArr[1];
         this.thirdFace =  emotionArr[2];
         this.forthFace =  emotionArr[3];
+        this.showSplash = false;
       });
   }
 
   ngOnInit() {
+    //this.getFrogFace();
+    console.log(this.primaryFace===undefined);
+  }
+
+  onClick() {
+    console.log("getting a new face...")
     this.getFrogFace();
   }
 

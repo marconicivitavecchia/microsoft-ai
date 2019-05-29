@@ -1,3 +1,22 @@
+#screen {
+    width: 480px;
+    height: 320px;
+    background-color: rgb(153,217,234);
+    /* background-color: rgb(200,191,231);
+    background-color: rgb(000,162,232); */
+}
+#splash {
+    padding-top: 3em;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
 .preview {
     width:160px;
     height:160px;
