@@ -117,7 +117,7 @@ app.get('/camera', function (req, res) {
 			console.log('JSON Response\n');
 			console.log(jsonResponse);
 			res.status(501).send(jsonResponse);
-		});;
+		});
 });
 
 // Express route for any other unrecognised incoming requests
