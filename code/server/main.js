@@ -62,7 +62,7 @@ app.get('/camera', function (req, res) {
 		request.post(postOptions, (error, response, body) => {
 			if (error) {
 				console.log('Error posting image: ', error);
-				let jsonData = {status: "POST error"};
+				let jsonData = { status: "POST error" };
 				let jsonResponse = JSON.stringify(jsonData, null, '  ');
 				console.log('JSON Response\n');
 				console.log(jsonResponse);
@@ -98,7 +98,11 @@ app.get('/camera', function (req, res) {
 						console.log("An error occured cropping the face");
 					});
 			} else {
-				let jsonData = {status: "no face found"};
+				let jsonData = {
+					img: "",
+					emotion: null,
+					status: "no face found"
+				};
 				let jsonResponse = JSON.stringify(jsonData, null, '  ');
 				console.log('JSON Response\n');
 				console.log(jsonResponse);
@@ -106,14 +110,14 @@ app.get('/camera', function (req, res) {
 			}
 		});
 	})
-	.catch(function (err) {
-		console.log("An error occured with raspberry camera");
-		let jsonData = {status: "error capturing image"};
-		let jsonResponse = JSON.stringify(jsonData, null, '  ');
-		console.log('JSON Response\n');
-		console.log(jsonResponse);
-		res.status(501).send(jsonResponse);
-	});;
+		.catch(function (err) {
+			console.log("An error occured with raspberry camera");
+			let jsonData = { status: "error capturing image" };
+			let jsonResponse = JSON.stringify(jsonData, null, '  ');
+			console.log('JSON Response\n');
+			console.log(jsonResponse);
+			res.status(501).send(jsonResponse);
+		});;
 });
 
 // Express route for any other unrecognised incoming requests
