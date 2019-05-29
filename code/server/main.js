@@ -1,7 +1,7 @@
 'use strict';
 
 const request = require('request');
-const fs = require('fs');
+//const fs = require('fs');
 const sharp = require('sharp');
 const { StillCamera, Rotation } = require("pi-camera-connect");
 
@@ -15,7 +15,7 @@ dotenv.config();
 
 
 const subscriptionKey = process.env.API_KEY;
-console.log(subscriptionKey);
+console.log(`Your subscription key is: ${subscriptionKey}. If undefined, please create .env with the API_KEY set to a valid Azure key`);
 
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
@@ -46,7 +46,7 @@ app.get('/camera', function (req, res) {
 	stillCamera.takeImage(cameraOptions).then(image => {
 		console.log(`image captured, size ${image.length}`);
 		// DEBUG: save image
-		//fs.writeFileSync("/home/pi/Desktop/out.jpg", image);
+		fs.writeFileSync("/home/pi/Desktop/out.jpg", image);
 		// Create POST options
 		const postOptions = {
 			uri: uriBase,
@@ -86,7 +86,7 @@ app.get('/camera', function (req, res) {
 						console.log(`Image cropped, size ${croppedImage.length}`);
 						fs.writeFileSync(`${faceData.faceId}.jpg`, image);
 						let jsonData = {};
-						jsonData.faceImg = croppedImage;
+						jsonData.faceImg = new Buffer(croppedImage).toString('base64');
 						jsonData.emotion = faceData.faceAttributes.emotion;
 						jsonData.status = "OK";
 						let jsonResponse = JSON.stringify(jsonData, null, '  ');
