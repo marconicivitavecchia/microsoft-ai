@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FrogFace } from './frog-face';
 import { FrogFaceService } from './frog-face.service';
 import { DetectedFace } from './detected-face';
+import { IDLE_FACE } from './idle-face';
 
 @Component({
   selector: 'app-root',
@@ -22,27 +23,35 @@ export class AppComponent {
 
   constructor(private frogFaceService: FrogFaceService) { }
 
+  assignFace(face:DetectedFace) {
+    this.previewImg = face.img;
+
+    const emotionArr = Object.keys(face.emotion).map(k => { return { "emotion": k, "value": face.emotion[k] }; });
+    emotionArr.sort(function (a, b) {
+      return b.value - a.value;
+    });
+    this.primaryFace = emotionArr[0];
+    this.secondFace = emotionArr[1];
+    this.thirdFace = emotionArr[2];
+    this.forthFace = emotionArr[3];
+    this.showSplash = false;
+  }
   getFrogFace(): void {
     this.frogFaceService.getFrogFace()
       .subscribe((data: DetectedFace) => {
         let detectedFace = { ...data };
-        this.previewImg = data.img;
-        
-        const emotionArr = Object.keys(detectedFace.emotion).map(k => { return { "emotion": k, "value": detectedFace.emotion[k] }; });
-        emotionArr.sort(function (a, b) {
-          return b.value - a.value;
-        });
-        this.primaryFace = emotionArr[0];
-        this.secondFace =  emotionArr[1];
-        this.thirdFace =  emotionArr[2];
-        this.forthFace =  emotionArr[3];
-        this.showSplash = false;
+        if (detectedFace.status === "OK") {
+          console.log("face detected!!!")
+          this.assignFace(detectedFace);
+        } else {
+          console.log("no face detected, using placeholder")
+          this.assignFace(IDLE_FACE);
+        }
       });
   }
 
   ngOnInit() {
-    //this.getFrogFace();
-    console.log(this.primaryFace===undefined);
+    
   }
 
   onClick() {
