@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Wait some time that system boot up completely
+echo "Wait some time for the system to boot..."
 sleep 10
  
 # Run this script in display 0 - the monitor
@@ -23,8 +24,7 @@ sleep 5
 
 # Run the front-end web server
 echo "Starting front-end web server..."
-cd /home/pi/hello-frog
-http-server . &
+http-server /home/pi/hello-frog -p 8080 &
 sleep 5
 
 # Run Chromium and open tabs
