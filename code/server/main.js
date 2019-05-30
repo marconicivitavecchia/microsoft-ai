@@ -1,7 +1,7 @@
 'use strict';
 
 const request = require('request');
-//const fs = require('fs');
+const fs = require('fs');
 const sharp = require('sharp');
 const { StillCamera, Rotation } = require("pi-camera-connect");
 
@@ -36,17 +36,19 @@ const cameraOptions = {
 	//1920x1080
 	width: 1920,
 	height: 1080,
-	rotation: Rotation.Rotate180
+	//rotation: Rotation.Rotate180
 };
 
 const stillCamera = new StillCamera(cameraOptions);
 
 app.get('/camera', function (req, res) {
 	// Take a still picture
-	stillCamera.takeImage(cameraOptions).then(image => {
+	stillCamera.takeImage().then(image => {
 		console.log(`image captured, size ${image.length}`);
 		// DEBUG: save image
-		fs.writeFileSync("/home/pi/Desktop/out.jpg", image);
+		console.log(`Saving file...`);
+		fs.writeFileSync("/home/pi/Desktop/out.jpg",image);
+		console.log(`File saved!`);
 		// Create POST options
 		const postOptions = {
 			uri: uriBase,
@@ -95,7 +97,7 @@ app.get('/camera', function (req, res) {
 						res.status(200).send(jsonResponse);
 					})
 					.catch(function (err) {
-						console.log("An error occured cropping the face");
+						console.log("An error occured cropping the face: "+JSON.stringify(err));
 					});
 			} else {
 				let jsonData = {
@@ -111,7 +113,7 @@ app.get('/camera', function (req, res) {
 		});
 	})
 		.catch(function (err) {
-			console.log("An error occured with raspberry camera");
+			console.log("An error occured with raspberry camera: "+JSON.stringify(err));
 			let jsonData = { status: "error capturing image" };
 			let jsonResponse = JSON.stringify(jsonData, null, '  ');
 			console.log('JSON Response\n');
