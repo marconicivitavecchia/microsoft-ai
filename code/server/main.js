@@ -8,6 +8,11 @@ const { StillCamera, Rotation } = require("pi-camera-connect");
 // Web Server
 const express = require('express');
 const app = express();
+app.use(function (req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+});
 
 // Environmental variables
 const dotenv = require('dotenv');
@@ -47,7 +52,7 @@ app.get('/camera', function (req, res) {
 		console.log(`image captured, size ${image.length}`);
 		// DEBUG: save image
 		console.log(`Saving file...`);
-		fs.writeFileSync("/home/pi/Desktop/out.jpg",image);
+		fs.writeFileSync("/home/pi/Desktop/out.jpg", image);
 		console.log(`File saved!`);
 		// Create POST options
 		const postOptions = {
@@ -97,7 +102,7 @@ app.get('/camera', function (req, res) {
 						res.status(200).send(jsonResponse);
 					})
 					.catch(function (err) {
-						console.log("An error occured cropping the face: "+JSON.stringify(err));
+						console.log("An error occured cropping the face: " + JSON.stringify(err));
 					});
 			} else {
 				let jsonData = {
@@ -113,7 +118,7 @@ app.get('/camera', function (req, res) {
 		});
 	})
 		.catch(function (err) {
-			console.log("An error occured with raspberry camera: "+JSON.stringify(err));
+			console.log("An error occured with raspberry camera: " + JSON.stringify(err));
 			let jsonData = { status: "error capturing image" };
 			let jsonResponse = JSON.stringify(jsonData, null, '  ');
 			console.log('JSON Response\n');
