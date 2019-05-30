@@ -1,0 +1,14 @@
+{
+    "faceImgUrl": "assets/cropped-face.jpg",
+    "emotion": {
+        "anger": 0,
+        "contempt": 0,
+        "disgust": 0,
+        "fear": 0,
+        "happiness": 0,
+        "neutral": 0.966,
+        "sadness": 0.034,
+        "surprise": 0
+    },
+    "status": "OK"
+}
