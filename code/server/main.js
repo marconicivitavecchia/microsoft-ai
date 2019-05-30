@@ -93,7 +93,7 @@ app.get('/camera', function (req, res) {
 						console.log(`Image cropped, size ${croppedImage.length}`);
 						fs.writeFileSync(`${faceData.faceId}.jpg`, image);
 						let jsonData = {};
-						jsonData.faceImg = new Buffer(croppedImage).toString('base64');
+						jsonData.img = new Buffer(croppedImage).toString('base64');
 						jsonData.emotion = faceData.faceAttributes.emotion;
 						jsonData.status = "OK";
 						let jsonResponse = JSON.stringify(jsonData, null, '  ');
