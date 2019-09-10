@@ -50,10 +50,10 @@ Here a proposal for the user interface.
 The idea is to show the most likely expression on the top, close to the crop of the snapshot from the camera. In the lower part, there are other faces in order of emotion probability, as received from Azure Cognitive Services.
 
 ## Printed model
-Almost there!
+It works!
 
 <p align="center" >
 <img title="Printed model disassembled" alt="Printed model disassembled" src='./printed/printed-disassembled.jpg' width='45%'>
 <img title="Printed model assembled" alt="Printed model assembled" src='./printed/printed-assembled.jpg' width='45%'>
-
+<img title="Printed model working" alt="Printed model working" src='./printed/printed-working.jpg' width='70%'>
 </p>
