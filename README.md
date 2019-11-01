@@ -20,7 +20,6 @@ Post on the Marconi website [ITA]:
 Fondazione Mondo Digitale [ITA]:
 - https://mondodigitale.org/it/news/con-satya-nadella
 - https://mondodigitale.org/it/news/lintelligenza-inclusiva
-- https://mondodigitale.org/it/news/satya-nadella-in-diretta
 
 Microsoft [ITA]:
 - https://twitter.com/microsoftitalia/status/1136694813691142145?s=08
