@@ -21,13 +21,12 @@ Fondazione Mondo Digitale [ITA]:
 - https://mondodigitale.org/it/news/con-satya-nadella
 - https://mondodigitale.org/it/news/lintelligenza-inclusiva
 
-Microsoft [ITA]:
+Microsoft Italia [ITA]:
 - https://twitter.com/microsoftitalia/status/1136694813691142145?s=08
 
-Corriere della Sera [ITA]:
-- https://www.corriere.it/tecnologia/19_maggio_30/ceo-microsoft-satya-nadella-italia-oggi-mondo-sta-diventando-computer-73d22f50-82ae-11e9-93b3-f04c99d00891.shtml?refresh_ce-cp
-
-Punto a capo on line [ITA]:
-- https://www.paconline.it/wordpress/2019/06/02/ambizione-italia-a-scuola-con-lintelligenza-aumentata/
+Newspapers and Online Magazines [ITA]:
+- [Il Corriere della Sera](https://www.corriere.it/tecnologia/19_maggio_30/ceo-microsoft-satya-nadella-italia-oggi-mondo-sta-diventando-computer-73d22f50-82ae-11e9-93b3-f04c99d00891.shtml?refresh_ce-cp), May 30, 2019
+- [Il Sole 24 Ore](https://scuola24.ilsole24ore.com/art/scuola/2019-05-30/ambizione-italia-scuola-l-intelligenza-aumentata-172015.php?uuid=ACdSQdK&refresh_ce=1), May 31, 2019
+- [Punto a Capo online](https://www.paconline.it/wordpress/2019/06/02/ambizione-italia-a-scuola-con-lintelligenza-aumentata), June 2, 2019
 
 
