@@ -12,7 +12,6 @@ Please see the [code README.md](./code/README.md)
 
 ## Press Review [ITA]
 - [Video interview](https://youtu.be/9-mv3_RauUc)
-
 - [Post on the Marconi website](https://www.marconicivitavecchia.it/index.php/it/component/k2/item/2153-progetto-easytalk)
 
 Fondazione Mondo Digitale:
