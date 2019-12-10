@@ -1,5 +1,8 @@
 'use strict';
 
+// Environmental variables
+require('dotenv').config();
+
 const request = require('request');
 const fs = require('fs');
 const sharp = require('sharp');
@@ -14,15 +17,14 @@ app.use(function (req, res, next) {
 	next();
 });
 
-app.use(express.static('public'));
+const staticFolder = process.env.STATIC_FOLDER
+app.use(express.static(staticFolder));
 
-// Environmental variables
-const dotenv = require('dotenv');
-dotenv.config();
 
 
 const subscriptionKey = process.env.API_KEY;
 console.log(`Your subscription key is: ${subscriptionKey}. If undefined, please create .env with the API_KEY set to a valid Azure key`);
+console.log(`Static folder is: ${staticFolder}.`);
 
 // You must use the same location in your REST call as you used to get your
 // subscription keys. For example, if you got your subscription keys from
