@@ -14,6 +14,8 @@ app.use(function (req, res, next) {
 	next();
 });
 
+app.use(express.static('public'));
+
 // Environmental variables
 const dotenv = require('dotenv');
 dotenv.config();
